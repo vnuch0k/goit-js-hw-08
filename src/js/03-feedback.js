@@ -8,7 +8,7 @@ const refs = {
 }
 
 const STORAGE_KEY = 'feedback-msg';
-const formData = {}
+let formData = {}
 
 
 refs.form.addEventListener('submit', onFormSubmit);
@@ -28,8 +28,9 @@ function onFormSubmit(e) {
 
     console.log('Отправляем форму');
     e.currentTarget.reset();
-    localStorage.removeItem(STORAGE_KEY)
+    localStorage.removeItem(STORAGE_KEY);
     console.log(formData);
+    formData = {};
 }
 
 
